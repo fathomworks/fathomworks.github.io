@@ -156,8 +156,8 @@
   // x0/y0: top-left of the part shown, s: zoom, spot: highlight box in the shown frame (fractions).
   const studyFocus = [
     { s: 1, x0: 0, y0: 0, spot: null },
-    { s: 2, x0: .5, y0: .123, spot: [.458, .326, .422, .468] },
-    { s: 1.6, x0: .0175, y0: .0375, spot: [.212, .092, .576, .752] },
+    { s: 2, x0: .5, y0: .123, spot: [.46, .33, .42, .458] },
+    { s: 1.8, x0: 0, y0: .2, spot: [.6, .216, .324, .675] },
   ];
 
   function hasGsap() {
@@ -250,11 +250,11 @@
     }
 
     // Section headings and cards rise in.
-    for (const el of $$('.pen .eyebrow, .pen .h2, .pen .lede, .ticks li, .study > .wrap:first-child > *, .features > .eyebrow, .features > .h2, .gallery__head > *, .private .h2, .private .eyebrow, .pricing > .eyebrow, .pricing > .h2, .faq > .h2, .final__inner > *')) {
+    for (const el of $$('.pen .eyebrow, .pen .h2, .pen .lede, .ticks li, .study > .wrap:first-child > *, .features > .eyebrow, .features > .h2, .gallery__head > *, .private .h2, .private .eyebrow, .faq > .h2, .final__inner > *')) {
       gsap.from(el, { y: 28, opacity: 0, duration: .8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
     }
-    gsap.set('.card, .plan, .private__list li, .faq details', { y: 34, opacity: 0 });
-    ScrollTrigger.batch('.card, .plan, .private__list li, .faq details', {
+    gsap.set('.card, .private__list li, .faq details', { y: 34, opacity: 0 });
+    ScrollTrigger.batch('.card, .private__list li, .faq details', {
       start: 'top 90%', once: true,
       onEnter: (batch) => gsap.to(batch, { y: 0, opacity: 1, duration: .8, ease: 'power3.out', stagger: .08 }),
     });
