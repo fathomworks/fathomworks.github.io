@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fathom · An endless notebook for your pen</title>
+  <meta name="description" content="Fathom is an infinite-canvas notebook for Android tablets. Write with your pen, zoom in forever, read PDFs beside your notes and export to PNG, JPG, PDF or SVG.">
+  <meta name="theme-color" content="#0B1B26">
+  <link rel="canonical" href="https://fathomworks.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fathom · An endless notebook for your pen">
+  <meta property="og:description" content="Write a heading, zoom a million times into one letter and write a footnote there. Handwritten notes for Android tablets.">
+  <meta property="og:url" content="https://fathomworks.github.io/">
+  <meta property="og:image" content="https://fathomworks.github.io/assets/og.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Fathom, back to top">
+        <svg class="brand__mark" viewBox="0 0 108 108" aria-hidden="true">
+          <path d="M54,30A24,24 0,1 1,30 54" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <path d="M54,42A12,12 0,1 1,42 54" fill="none" stroke="var(--teal-bright)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="54" cy="54" r="5" fill="var(--teal-bright)"/>
+        </svg>
+        <span>Fathom</span>
+      </a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#zoom">Zoom</a>
+        <a href="#study">Study</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--small btn--teal" href="#get" data-play>Get Fathom</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero__rings" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero__copy wrap">
+        <p class="pill"><span class="pill__dot"></span>Now in testing on Google Play</p>
+        <h1 class="hero__title">
+          <span class="line">An endless notebook</span>
+          <span class="line">for your pen.</span>
+          <span class="line accent">Zoom in forever.</span>
+        </h1>
+        <p class="hero__lede">Write a heading, zoom a million times into one letter and write a footnote there. Fathom is a sheet of paper with no edges and no bottom, with the study tools around it. Built for Android tablets and their pens.</p>
+        <div class="hero__ctas">
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.fathomworks.fathom" data-play rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.8.8 0 0 0 1.2.7l14.6-8.5a.8.8 0 0 0 0-1.4L6.2 2.8A.8.8 0 0 0 5 3.5z" fill="currentColor"/></svg>
+            <span><small>In testing on</small>Google Play</span>
+          </a>
+          <a class="btn btn--ghost" href="#zoom">See how deep it goes <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero__device wrap">
+        <div class="device" id="heroDevice">
+          <img src="assets/shots/canvas-1600.webp" srcset="assets/shots/canvas-900.webp 900w, assets/shots/canvas-1600.webp 1600w" sizes="(min-width: 1200px) 1100px, 92vw" width="1600" height="1000" alt="A Fathom canvas called Cell biology: a handwritten heading, notes and a labelled drawing of a cell, with the toolbar at the bottom and a small map of the canvas in the corner." fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- The dive: scroll-driven infinite zoom -->
+    <section class="dive" id="zoom" aria-labelledby="dive-title">
+      <div class="dive__pin">
+        <div class="dive__copy">
+          <p class="eyebrow">Zoom has no limit</p>
+          <h2 id="dive-title" class="dive__title">One page. <br>No bottom.</h2>
+          <ol class="dive__steps" id="diveSteps">
+            <li class="is-active" data-z="0"><span class="dive__z">×1</span><strong>Write a heading.</strong> Your page starts at normal size, like paper.</li>
+            <li data-z="2"><span class="dive__z">×100</span><strong>Zoom into one cell</strong> of your drawing and keep writing in there.</li>
+            <li data-z="4"><span class="dive__z">×10,000</span><strong>Write a footnote inside a full stop.</strong> Every line stays sharp.</li>
+            <li data-z="6"><span class="dive__z">×1,000,000</span><strong>Keep going.</strong> Fathom has no zoom floor, so your notes go as deep as your ideas.</li>
+          </ol>
+        </div>
+        <div class="dive__stagewrap">
+          <div class="stage" id="stage">
+            <svg class="stage__svg" viewBox="-500 -312.5 1000 625" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A handwritten canvas that zooms from a drawing of a cell, into its nucleolus, into a full stop, a million times deep.">
+              <defs>
+                <pattern id="dotsA" patternUnits="userSpaceOnUse" width="28" height="28" x="-14" y="-14">
+                  <circle cx="14" cy="14" r="1.1" fill="#B9C9C6"/>
+                </pattern>
+                <pattern id="dotsB" patternUnits="userSpaceOnUse" width="28" height="28" x="-14" y="-14">
+                  <circle cx="14" cy="14" r="1.1" fill="#B9C9C6"/>
+                </pattern>
+              </defs>
+              <rect x="-5000" y="-5000" width="10000" height="10000" fill="#F7FAF9"/>
+              <rect class="dots dots--a" x="-5000" y="-5000" width="10000" height="10000" fill="url(#dotsA)"/>
+              <rect class="dots dots--b" x="-5000" y="-5000" width="10000" height="10000" fill="url(#dotsB)" opacity="0"/>
+
+              <!-- Level 0, ×1: the cell biology page. The nucleolus sits at the origin. -->
+              <g class="lv" data-level="0" font-family="Caveat, 'Segoe Print', cursive" fill="#10222E">
+                <text x="-470" y="-205" font-size="72" font-weight="600">Cell biology</text>
+                <path d="M-472,-188 C-380,-191 -260,-186 -150,-190" fill="none" stroke="#1E6F8A" stroke-width="3.2" stroke-linecap="round"/>
+                <text x="-468" y="-120" font-size="34">- nucleus: DNA</text>
+                <text x="-468" y="-78" font-size="34">- mitochondria: ATP</text>
+                <rect x="-296" y="210" width="66" height="34" rx="6" fill="#F6DD6E" opacity=".75"/>
+                <text x="-470" y="238" font-size="38">C6H12O6 →</text>
+                <text x="-290" y="238" font-size="38">ATP</text>
+                <g fill="none" stroke="#1E6F8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M-30,-182 C80,-196 210,-150 262,-60 C300,10 280,110 200,160 C120,205 -20,210 -120,170 C-215,130 -250,40 -225,-40 C-200,-120 -120,-175 -30,-182 Z"/>
+                  <ellipse cx="0" cy="0" rx="62" ry="50" transform="rotate(-8)"/>
+                  <circle cx="0" cy="0" r="14"/>
+                  <ellipse cx="160" cy="-70" rx="46" ry="22" transform="rotate(-22 160 -70)"/>
+                  <path d="M126,-62 l10,-18 l8,20 l9,-20 l8,20 l9,-20 l8,18"/>
+                  <ellipse cx="-110" cy="105" rx="48" ry="23" transform="rotate(14 -110 105)"/>
+                  <path d="M-146,96 l9,18 l9,-18 l9,19 l9,-18 l9,18 l9,-16"/>
+                  <ellipse cx="150" cy="95" rx="44" ry="22" transform="rotate(28 150 95)"/>
+                  <path d="M120,80 l10,18 l9,-14 l10,19 l9,-13 l10,18"/>
+                </g>
+                <g fill="none" stroke="#10222E" stroke-width="2.6" stroke-linecap="round">
+                  <path d="M40,-230 L14,-58"/>
+                  <path d="M330,-190 L196,-88"/>
+                  <path d="M-170,262 L-140,152"/>
+                </g>
+                <text x="0" y="-240" font-size="40">nucleus</text>
+                <text x="300" y="-200" font-size="40">mitochondria</text>
+                <text x="-250" y="292" font-size="40">membrane</text>
+              </g>
+
+              <!-- Level 1, ×100: inside the nucleolus. The full stop sits at the origin. -->
+              <g class="lv" data-level="1" font-family="Caveat, 'Segoe Print', cursive" fill="#10222E">
+                <text x="-440" y="-190" font-size="64" font-weight="600">inside the nucleolus</text>
+                <path d="M-442,-170 C-300,-176 -150,-168 -10,-174" fill="none" stroke="#1E6F8A" stroke-width="3" stroke-linecap="round"/>
+                <text x="-430" y="-100" font-size="36">rRNA is made here, then folded</text>
+                <text x="-430" y="-58" font-size="36">into the two ribosome halves</text>
+                <text x="-14" y="10" font-size="40" text-anchor="end">ribosomes are built here</text>
+                <circle cx="0" cy="0" r="10" fill="#10222E"/>
+                <g fill="none" stroke="#1E6F8A" stroke-width="3" stroke-linecap="round">
+                  <path d="M150,-120 C210,-170 320,-160 340,-90 C360,-30 300,0 240,-10 C170,-20 110,-70 150,-120 Z"/>
+                  <path d="M180,10 C220,-15 300,-10 315,30 C330,75 270,95 225,85 C175,75 150,35 180,10 Z"/>
+                  <path d="M120,130 C180,150 260,120 330,150 C380,170 420,160 450,140"/>
+                </g>
+                <text x="190" y="200" font-size="32">mRNA</text>
+                <text x="-430" y="150" font-size="34" fill="#4A6270">¹ zoom into the dot →</text>
+              </g>
+
+              <!-- Level 2, ×10,000: inside the full stop. Ink everywhere; write in light. -->
+              <g class="lv" data-level="2" font-family="Caveat, 'Segoe Print', cursive" fill="#EAF2F1">
+                <circle cx="0" cy="0" r="1000" fill="#10222E"/>
+                <text x="-430" y="-170" font-size="60" font-weight="600">¹ a footnote,</text>
+                <text x="-430" y="-110" font-size="60" font-weight="600">inside a full stop</text>
+                <text x="-430" y="-30" font-size="34" fill="#C8D6DA">written at ×10,000 and still sharp</text>
+                <circle cx="0" cy="0" r="12" fill="none" stroke="#3FD0C2" stroke-width="1.6"/>
+                <path d="M40,10 C85,25 120,60 130,120" fill="none" stroke="#3FD0C2" stroke-width="2.6" stroke-linecap="round"/>
+                <text x="100" y="160" font-size="34" fill="#3FD0C2">deeper?</text>
+              </g>
+
+              <!-- Level 3, ×1,000,000: inside the ring. -->
+              <g class="lv" data-level="3" font-family="Caveat, 'Segoe Print', cursive" fill="#EAF2F1">
+                <circle cx="0" cy="0" r="1400" fill="#10222E"/>
+                <circle cx="0" cy="0" r="1200" fill="none" stroke="#3FD0C2" stroke-width="160"/>
+                <text x="0" y="-60" font-size="92" font-weight="600" text-anchor="middle">there is no bottom.</text>
+                <text x="0" y="20" font-size="40" text-anchor="middle" fill="#3FD0C2">×1,000,000 and still writing</text>
+                <g fill="none" stroke="#3FD0C2" stroke-width="3" stroke-linecap="round" opacity=".8">
+                  <path d="M-80,120 C-40,95 20,95 60,120 C20,145 -40,145 -80,120 Z"/>
+                  <path d="M60,120 L95,100 L95,140 Z"/>
+                  <circle cx="-50" cy="116" r="3" fill="#3FD0C2"/>
+                </g>
+              </g>
+            </svg>
+            <div class="stage__chrome" aria-hidden="true">
+              <div class="chip chip--name"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Cell biology</b><small>Saved on this device</small></span></div>
+              <div class="chip chip--zoom"><span id="zoomChip">×1</span></div>
+              <div class="gauge"><div class="gauge__fill" id="gaugeFill"></div><span>depth</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pen -->
+    <section class="pen wrap" id="pen" aria-labelledby="pen-title">
+      <div class="pen__copy">
+        <p class="eyebrow">Fast pen, quiet paper</p>
+        <h2 id="pen-title" class="h2">Pick up the pen and write. <br>That's the whole interface.</h2>
+        <p class="lede">Open a canvas and write straight away: no tool to choose first. The pen writes, your fingers move the page, and the controls stay small and out of the way.</p>
+        <ul class="ticks">
+          <li><strong>Ink that keeps up.</strong> Strokes are drawn on Android's low-latency layer, with pressure, so lines feel like paper.</li>
+          <li><strong>Pen, highlighter and crayon</strong>, each with five colours of its own, a full colour picker and an eyedropper.</li>
+          <li><strong>Erase without switching.</strong> Hold the S Pen's side button or turn the pen round to its eraser end.</li>
+          <li><strong>What you draw stays.</strong> No shape "correction", no beautifying. Every change is saved as you go.</li>
+        </ul>
+      </div>
+      <div class="pen__art" aria-hidden="true">
+        <svg class="pen__svg" id="penSvg" viewBox="0 0 600 460">
+          <g fill="none" stroke="#1E6F8A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path class="draw" d="M290,60 C400,48 520,95 560,190 C590,270 560,350 470,390 C380,428 230,430 140,380 C60,335 40,250 70,170 C100,95 190,68 290,60 Z"/>
+            <path class="draw" d="M262,200 C262,170 290,150 322,152 C356,154 378,178 374,208 C370,240 340,258 308,254 C278,250 262,228 262,200 Z"/>
+            <path class="draw" d="M306,198 C306,190 314,186 320,188 C327,190 330,198 326,204 C322,210 312,210 308,205 Z"/>
+            <path class="draw" d="M420,140 C450,125 495,128 505,145 C512,160 485,175 455,177 C425,180 398,168 402,155 C404,148 410,144 420,140 Z"/>
+            <path class="draw" d="M412,160 l10,-20 l9,22 l10,-22 l9,22 l10,-22 l9,20"/>
+            <path class="draw" d="M160,300 C185,282 235,285 250,305 C262,322 238,338 208,338 C176,338 146,322 160,300 Z"/>
+            <path class="draw" d="M160,318 l9,-20 l10,22 l9,-22 l10,22 l9,-22 l9,18"/>
+          </g>
+          <g fill="none" stroke="#10222E" stroke-width="3" stroke-linecap="round">
+            <path class="draw" d="M330,20 L318,150"/>
+            <path class="draw" d="M120,440 L180,350"/>
+          </g>
+          <text class="hand" x="300" y="16" font-size="34" fill="#10222E">nucleus</text>
+          <text class="hand" x="20" y="452" font-size="34" fill="#10222E" text-anchor="start" dx="120">membrane</text>
+        </svg>
+        <svg class="pen__nib" id="penNib" viewBox="0 0 40 160" aria-hidden="true">
+          <path d="M14,0 h12 v120 l-6,30 l-6,-30 z" fill="#0B1B26"/>
+          <path d="M14,0 h12 v12 h-12 z" fill="#3FD0C2"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Study: PDF reader story -->
+    <section class="study" id="study" aria-labelledby="study-title">
+      <div class="wrap">
+        <p class="eyebrow">Read, clip, annotate</p>
+        <h2 id="study-title" class="h2">Your PDF, right beside your notes.</h2>
+      </div>
+      <div class="study__grid wrap">
+        <div class="study__visual">
+          <div class="device device--flat">
+            <div class="study__frame">
+              <img id="studyImg" src="assets/shots/pdf-reader-1600.webp" srcset="assets/shots/pdf-reader-900.webp 900w, assets/shots/pdf-reader-1600.webp 1600w" sizes="(min-width: 1000px) 60vw, 92vw" width="1600" height="1000" loading="lazy" alt="The PDF reader open beside a canvas. A figure of a cell is boxed on the PDF page with an Add to canvas button, and the same figure already sits on the canvas with an Open PDF tag.">
+              <div class="spot" id="studySpot" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <ol class="study__steps">
+          <li class="study__step" data-focus="0">
+            <span class="num">1</span>
+            <h3>Open a PDF beside the canvas</h3>
+            <p>Read side by side, stacked, or full screen. Each PDF opens again where you left it: same page, same place, same zoom.</p>
+          </li>
+          <li class="study__step" data-focus="1">
+            <span class="num">2</span>
+            <h3>Mark it up, then box a figure</h3>
+            <p>Write and highlight on the pages with your pen. Draw a box round a figure, a formula or a paragraph and tap Add to canvas.</p>
+          </li>
+          <li class="study__step" data-focus="2">
+            <span class="num">3</span>
+            <h3>Clippings remember where they came from</h3>
+            <p>Every clipping keeps its page. Tap its tag and Show in PDF takes you straight back to the spot it was cut from.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features wrap" id="features" aria-labelledby="features-title">
+      <p class="eyebrow">Everything around the page</p>
+      <h2 id="features-title" class="h2">The study tools, without the clutter.</h2>
+      <div class="cards">
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z M3 13l9 5 9-5 M3 17.5l9 5 9-5"/></svg>
+          <h3>Layers</h3>
+          <p>Name them, reorder them, hide them, or show only one. Choose which layer each tool writes on.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z M4 9.3h16 M4 14.6h16 M9.3 4v16 M14.6 4v16"/></svg>
+          <h3>Paper and grids</h3>
+          <p>Paper colours, a crumpled texture, and dots, squares or lines that keep their size at any zoom.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 15l5-5 4 4 2-2 5 5 M15.5 9.5h.01"/></svg>
+          <h3>Pictures and text cards</h3>
+          <p>Add photos from the gallery or camera and crop them. Typed text cards stay sharp however far you zoom.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c5 0 8 2.4 8 5.5S17 15 12 15s-8-2.4-8-5.5S7 4 12 4z M8 14.5c-1 1.6-1 3.3.4 4.5 1.3 1.1 3 .8 3.6-.8"/></svg>
+          <h3>Lasso</h3>
+          <p>Circle anything to move, resize, rotate, flip, recolour, group, copy or paste it.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14"/></svg>
+          <h3>A map, and Go home</h3>
+          <p>A small map of the whole canvas shows where you are. One tap takes you back to the start.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2 M12 21a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17z M10 2h4"/></svg>
+          <h3>Focus sessions</h3>
+          <p>Pomodoro or Flowmodoro beside your notes, with a short task list. It keeps running in the background and keeps your history.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3 M7 8l5-5 5 5 M4 14v6h16v-6"/></svg>
+          <h3>Export, free</h3>
+          <p>PNG, JPG, PDF, SVG, or a .fathom file of the whole canvas. Export what's on screen, a selection, a frame or everything.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8 M12 8l4 4-4 4 M4 4h7 M4 4v16h7"/></svg>
+          <h3>Share straight in</h3>
+          <p>Share a PDF or a picture from any app and Fathom asks which canvas it goes on.</p>
+        </article>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5 M20 9V4h-5 M4 15v5h5 M20 15v5h-5"/></svg>
+          <h3>The whole screen is yours</h3>
+          <p>Status and navigation bars stay hidden while you work. Swipe in from the top to see them for a moment.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery: horizontal scroll -->
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery__pin">
+        <div class="wrap gallery__head">
+          <p class="eyebrow">A closer look</p>
+          <h2 id="gallery-title" class="h2">Made for a tablet and a pen.</h2>
+        </div>
+        <div class="gallery__track" id="galleryTrack" tabindex="0" aria-label="Screenshots, scroll sideways">
+          <figure class="shot">
+            <img src="assets/shots/overview-900.webp" srcset="assets/shots/overview-900.webp 900w, assets/shots/overview-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 84vw" width="900" height="563" loading="lazy" alt="The whole Cell biology canvas zoomed out, with a PDF clipping beside the drawing.">
+            <figcaption><b>See it all</b> Zoom out to the whole canvas; the zoom chip says how far.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/shots/layers-900.webp" srcset="assets/shots/layers-900.webp 900w, assets/shots/layers-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 84vw" width="900" height="563" loading="lazy" alt="The Layers panel with two layers, and which layer the pen, highlighter and crayon write on.">
+            <figcaption><b>Layers</b> Pictures and PDFs on one layer, new ink on another.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/shots/export-900.webp" srcset="assets/shots/export-900.webp 900w, assets/shots/export-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 84vw" width="900" height="563" loading="lazy" alt="The Export panel offering PNG, JPG, PDF, SVG and .fathom, and what to export.">
+            <figcaption><b>Export</b> Every format, sharp lines, no account needed.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/shots/focus-900.webp" srcset="assets/shots/focus-900.webp 900w, assets/shots/focus-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 84vw" width="900" height="563" loading="lazy" alt="The Focus session panel showing a 25-minute Pomodoro timer beside the canvas.">
+            <figcaption><b>Focus</b> A timer that sits beside the page, not on top of it.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/shots/deep-zoom-900.webp" srcset="assets/shots/deep-zoom-900.webp 900w, assets/shots/deep-zoom-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 84vw" width="900" height="563" loading="lazy" alt="Deep inside the canvas at ×100: one word fills the screen, and below it someone has written zoom in forever.">
+            <figcaption><b>Deep zoom</b> At ×100 one word fills the screen. Write inside it.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/shots/library-900.webp" srcset="assets/shots/library-900.webp 900w, assets/shots/library-1600.webp 1600w" sizes="(min-width: 900px) 56vw, 84vw" width="900" height="563" loading="lazy" alt="The library of canvases: Tutor plan, Chemistry, Cell biology and Physics, each with a thumbnail.">
+            <figcaption><b>Library</b> Every canvas at a glance, stored on your device.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private -->
+    <section class="private" id="private" aria-labelledby="private-title">
+      <div class="wrap private__inner">
+        <div>
+          <p class="eyebrow eyebrow--dark">Local-first and private</p>
+          <h2 id="private-title" class="h2">Your notes are yours. <br>That's not a setting.</h2>
+        </div>
+        <ul class="private__list">
+          <li><span class="private__k">Offline</span>Every feature that doesn't need the cloud works with no account and no connection.</li>
+          <li><span class="private__k">Never sold</span>Your notes are never read, analysed or sold. No ads, ever.</li>
+          <li><span class="private__k">Crash-only</span>Crash reports carry no note content, and you can turn them off in Settings.</li>
+          <li><span class="private__k">No hostage</span>If a subscription ends, every canvas still opens, edits and exports on your devices.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing wrap" id="pricing" aria-labelledby="pricing-title">
+      <p class="eyebrow">Pricing</p>
+      <h2 id="pricing-title" class="h2">Free to write. Pay only to sync and read.</h2>
+      <div class="plans">
+        <article class="plan">
+          <h3>Free</h3>
+          <p class="plan__price"><span>$0</span> forever</p>
+          <p class="plan__lede">The whole notebook, on your tablet.</p>
+          <ul>
+            <li>The infinite canvas and every pen tool</li>
+            <li>Layers, paper and grids, pictures, text cards, lasso</li>
+            <li>Focus sessions and history</li>
+            <li>Every export format: PNG, JPG, PDF, SVG, .fathom</li>
+            <li>No account needed</li>
+          </ul>
+          <a class="btn btn--outline" href="#get" data-play>Start writing</a>
+        </article>
+        <article class="plan plan--pro">
+          <p class="plan__badge">14 days free</p>
+          <h3>Subscription</h3>
+          <p class="plan__price"><span>$9.99</span> a month</p>
+          <p class="plan__lede">Everything in Free, plus:</p>
+          <ul>
+            <li>The PDF reader: marks, highlights and clippings</li>
+            <li>Sync between your devices, even after editing offline on two at once</li>
+            <li>Your notes end-to-end encrypted in the cloud</li>
+            <li>Start the trial when you first sign in, with no payment</li>
+          </ul>
+          <a class="btn btn--teal" href="#get" data-play>Try it free for 14 days</a>
+        </article>
+      </div>
+      <p class="fine">Prices in US dollars; Google Play shows the price for your country. Cancel any time from Settings. If the subscription ends, your notes stay fully usable on your devices; sync pauses and the cloud copy is kept for 30 days. Accounts and sync arrive in a coming test build.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq wrap" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="h2">Questions</h2>
+      <div class="faq__list">
+        <details>
+          <summary>Which devices does Fathom run on?</summary>
+          <p>Android tablets on Android 10 or newer, and it shines with an active pen like the Samsung S Pen. It runs on Android phones too, but it's designed for a tablet. iPad, Windows and macOS versions are planned from the same code, opening the same canvases.</p>
+        </details>
+        <details>
+          <summary>Can I get it now?</summary>
+          <p>Fathom is in testing on Google Play right now. If you're on the testers list, the Google Play button opens the listing for you; for everyone else, the listing opens to the public soon.</p>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. Write, organise and export without signing in. An account is only for sync and the subscription.</p>
+        </details>
+        <details>
+          <summary>How deep can I really zoom?</summary>
+          <p>There's no floor. Fathom stores every position with as much precision as it needs, so a line drawn a million times deep is as crisp as one at normal size, and you can zoom far out too.</p>
+        </details>
+        <details>
+          <summary>What happens to my notes if I stop subscribing?</summary>
+          <p>Nothing bad. Every canvas still opens, edits and exports on your devices. Sync and the PDF reader pause, and the cloud copy is kept for 30 days in case you come back.</p>
+        </details>
+        <details>
+          <summary>Can I take my notes elsewhere?</summary>
+          <p>Yes, for free: export a page or the whole canvas to PNG, JPG, PDF or SVG, or back it up as a .fathom file and open it on another device.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final" id="get" aria-labelledby="final-title">
+      <div class="hero__rings hero__rings--final" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="wrap final__inner">
+        <h2 id="final-title" class="final__title">Start an endless page.</h2>
+        <p class="lede lede--dark">Fathom is in testing on Google Play for Android tablets. The public listing opens soon.</p>
+        <a class="play play--big" href="https://play.google.com/store/apps/details?id=com.fathomworks.fathom" data-play rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a.8.8 0 0 0 1.2.7l14.6-8.5a.8.8 0 0 0 0-1.4L6.2 2.8A.8.8 0 0 0 5 3.5z" fill="currentColor"/></svg>
+          <span><small>In testing on</small>Google Play</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand brand--footer" href="#top">
+        <svg class="brand__mark" viewBox="0 0 108 108" aria-hidden="true">
+          <path d="M54,30A24,24 0,1 1,30 54" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+          <path d="M54,42A12,12 0,1 1,42 54" fill="none" stroke="var(--teal-bright)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="54" cy="54" r="5" fill="var(--teal-bright)"/>
+        </svg>
+        <span>Fathom</span>
+      </a>
+      <p>© 2026 Fathom. Google Play and Android are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
