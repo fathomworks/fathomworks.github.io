@@ -335,7 +335,11 @@ p { margin: 0; }
   border: solid var(--teal); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); transition: transform .25s ease;
 }
 .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -3px; }
-.faq details p { padding: 0 0 24px; color: var(--muted); max-width: 70ch; }
+.faq details p { padding: 0 0 12px; color: var(--muted); max-width: 70ch; }
+.faq details p:last-child { padding-bottom: 24px; }
+.faq details p strong { color: var(--ink); }
+#join { scroll-margin-top: 84px; }
+.final__stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
 /* Final */
 .final {

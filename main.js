@@ -29,6 +29,13 @@
   window.addEventListener('resize', updateNav);
   updateNav();
 
+  // ---- Links to "#join" open the FAQ answer on how to join the test.
+  const join = $('#join');
+  const openJoin = () => { if (location.hash === '#join') join.open = true; };
+  window.addEventListener('hashchange', openJoin);
+  $$('[data-join]').forEach((a) => a.addEventListener('click', () => { join.open = true; }));
+  openJoin();
+
   // ---- The dive. Each level is drawn in its own coordinates around the zoom point and is 100×
   // deeper than the one before, so no transform ever gets huge (the app's engine does the same).
   const LEVEL_STEP = 100;
